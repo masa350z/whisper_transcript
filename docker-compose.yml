@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  my_transcript_tool:
+    build: setup/
+    container_name: my_transcript_tool
+    # ホスト側のカレントディレクトリをコンテナの /app にマウント
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: ["python", "main.py"]
